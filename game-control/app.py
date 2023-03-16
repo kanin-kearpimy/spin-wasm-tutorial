@@ -3,7 +3,7 @@ from spin_redis import redis_get, redis_set
 import json
 from os import environ
 
-headers = [("content-type", "application/json"), ("Access-Control-Allow-Origin", "*")]
+headers = [("Content-Type", "application/json"), ("Access-Control-Allow-Origin", "*")]
 
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')

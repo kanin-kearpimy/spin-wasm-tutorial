@@ -23,5 +23,6 @@ route = "/score"
 id = "game-control"
 source = "deployment/control.wasm"
 environment = {REDIS_HOST = "redis://localhost:6379/", REDIS_CHANNEL = "test"}
+allowed_http_hosts = ["localhost:1234"]
 [component.trigger]
 route = "/control"

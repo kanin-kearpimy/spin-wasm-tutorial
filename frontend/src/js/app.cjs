@@ -60,7 +60,7 @@ const answer = async (event) => {
         timeSlot: start
     } 
     // should be post here!!!
-    await axios.get(`http://127.0.0.1:3000/control`, body, { headers: { 'content-type': 'application/json' }})
+    await axios.post(`http://127.0.0.1:3000/control`, body, { headers: {"Content-Type": "text/plain"}})
 }
 
 startGame()

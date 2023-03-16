@@ -9,13 +9,14 @@ sessions = ["number-1",
     "number-2",
     "number-3",
     "number-4",
-    "plus",
-    "minus",
-    "multiply",
-    "divide",
-    "back",
-    "space",
-    "next"]
+    # "plus",
+    # "minus",
+    # "multiply",
+    # "divide",
+    # "back",
+    # "space",
+    # "next"
+    ]
 
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')
@@ -49,7 +50,7 @@ def getKey(dictionary, key):
 def generate_session(totalSession):
     _session = []
     while(len(_session) < totalSession):
-        _session.append(sessions[random.randint(0, 10)])
+        _session.append(sessions[random.randint(0, 3)])
     return _session
 
 def getQueryParams(uri):
