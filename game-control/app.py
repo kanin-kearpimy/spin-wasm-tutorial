@@ -18,9 +18,9 @@ def handle_request(request):
         redis_set(redisHost, session_id, sessionJsonObj)
     
     return Response(200,
-                    headers,
-                    json.dumps({"message": "successful"}).encode('utf-8')
-                    )
+                headers,
+                json.dumps({"message": "successful"}).encode('utf-8')
+            )
 
 
 def getJsonBody(body):

@@ -1,0 +1,16 @@
+spin_manifest_version = "1"
+authors = ["kanin-kearpimy <kanin.kearpimy@gmail.com>"]
+description = "file"
+name = "file"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "file"
+source = "target/spin-http-js.wasm"
+exclude_files = ["**/node_modules"]
+files = ["frontend/**/*", { source = "frontend/", destination = "/" }]
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run build"

@@ -16,7 +16,6 @@ export const handleRequest: HandleRequest = async function(request: HttpRequest)
   
   const session = decoder.decode(spinSdk.redis.get(redis_host as string, querys.session_id))
   const { score } = JSON.parse(session)
-  console.log(score)
   return {
     status: 200,
     headers: { "content-type": "application/json", "Access-Control-Allow-Origin": "*" },

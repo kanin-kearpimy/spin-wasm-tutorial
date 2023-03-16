@@ -8,7 +8,7 @@ version = "0.1.0"
 [[component]]
 id = "game-control"
 source = "control.wasm"
-environment = {REDIS_HOST = "redis://localhost:6379/", REDIS_CHANNEL = "test"}
+environment = {REDIS_HOST = "redis://localhost:6379/"}
 [component.trigger]
 route = "/control"
 [component.build]
