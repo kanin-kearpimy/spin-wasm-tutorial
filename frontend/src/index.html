@@ -9,6 +9,40 @@
     <title>24 Number Game!</title>
 </head>
 <body>
-    <main class="w-full h-screen"></main>
+    <main class="w-full flex flex-col h-screen p-12">
+        <div class="w-full flex flex-row justify-around text-white font-bold text-2xl">
+            <div>
+                Timer: 
+            </div>
+            <div>
+                X/N
+            </div>
+            <div>
+                Score: 
+            </div>
+        </div>
+        <div class="flex flex-row mx-auto mt-20 text-5xl">
+            <button id="number-1" class="number-calculate bg-white rounded-md py-4 px-8 mx-4 active:bg-slate-200">1</button>
+            <button id="number-2" class="number-calculate bg-white rounded-md py-4 px-8 mx-4 active:bg-slate-200">2</button>
+            <button id="number-3" class="number-calculate bg-white rounded-md py-4 px-8 mx-4 active:bg-slate-200">3</button>
+            <button id="number-4" class="number-calculate bg-white rounded-md py-4 px-8 mx-4 active:bg-slate-200">4</button>
+        </div>
+        <div class="flex flex-row mx-auto mt-4 text-2xl">
+            <button id="plus" class="number-calculate bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200">+</button>
+            <button id="minus" class="number-calculate bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200">-</button>
+            <button id="multiply" class="number-calculate bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200">*</button>
+            <button id="divide" class="number-calculate bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200">/</button>
+        </div>
+        <div class="flex flex-row mx-auto mt-4 text-2xl">
+            <button id="back" class="number-calculate bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200"><-</button>
+        </div>
+        <div class="flex flex-row mx-auto mt-4 text-2xl w-1/2">
+            <button id="space" class="number-calculate w-full h-[50px] bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200">Space</button>
+        </div>
+        <div class="flex flex-row mx-auto mt-4 text-2xl">
+            <button id="next" class="number-calculate bg-white rounded-md py-2 px-6 mx-4 active:bg-slate-200">Next</button>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
 </body>
 </html>
