@@ -1,0 +1,27 @@
+spin_manifest_version = "1"
+authors = ["kanin-kearpimy <kanin.kearpimy@gmail.com>"]
+description = "Game Application"
+name = "game-application"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "game-session"
+source = "deployment/session.wasm"
+environment = {REDIS_HOST = "redis://localhost:6379/"}
+[component.trigger]
+route = "/sessions"
+
+[[component]]
+id = "game-score"
+source = "deployment/spin-http-js.wasm"
+environment = {REDIS_HOST = "redis://localhost:6379/"}
+[component.trigger]
+route = "/score"
+
+[[component]]
+id = "game-control"
+source = "deployment/control.wasm"
+environment = {REDIS_HOST = "redis://localhost:6379/", REDIS_CHANNEL = "test"}
+[component.trigger]
+route = "/control"

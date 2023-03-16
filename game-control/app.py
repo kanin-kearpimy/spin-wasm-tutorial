@@ -3,6 +3,8 @@ from spin_redis import redis_get, redis_set
 import json
 from os import environ
 
+headers = [("content-type", "application/json"), ("Access-Control-Allow-Origin", "*")]
+
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')
     jsonObj = getJsonBody(request.body)
@@ -16,8 +18,9 @@ def handle_request(request):
         redis_set(redisHost, session_id, sessionJsonObj)
     
     return Response(200,
-                    [("content-type", "text/plain")],
-                    bytes(f"Successfully", "utf-8"))
+                    headers,
+                    json.dumps({"message": "successful"}).encode('utf-8')
+                    )
 
 
 def getJsonBody(body):

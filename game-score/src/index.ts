@@ -9,7 +9,7 @@ export const handleRequest: HandleRequest = async function(request: HttpRequest)
   if(!("session_id" in querys)) {
     return {
       status: 400,
-      headers: { "content-type": "text/plain" },
+      headers: { "content-type": "text/plain", "Access-Control-Allow-Origin": "*" },
       body: encoder.encode("No Session ID.").buffer
     }
   }
@@ -19,7 +19,7 @@ export const handleRequest: HandleRequest = async function(request: HttpRequest)
   console.log(score)
   return {
     status: 200,
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", "Access-Control-Allow-Origin": "*" },
     body: encoder.encode(JSON.stringify({score: score})).buffer
   }
 }

@@ -1,9 +1,9 @@
 from spin_http import Response
 import random, json, uuid
-from spin_redis import redis_publish, redis_set
+from spin_redis import redis_set
 from os import environ
 
-headers = [("content-type", "application/json")]
+headers = [("content-type", "application/json"), ("Access-Control-Allow-Origin", "*")]
 status = 200
 sessions = ["number-1", 
     "number-2",
@@ -31,7 +31,7 @@ def handle_request(request):
     
     redis_set(redisHost, session_id, sessionBody)
     
-    responseBody = json.dumps({"session": session}).encode('utf-8')
+    responseBody = json.dumps({"session": session, "session_id": session_id}).encode('utf-8')
     
     return Response(
                     status,

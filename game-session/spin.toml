@@ -12,4 +12,4 @@ environment = {REDIS_HOST = "redis://localhost:6379/"}
 [component.trigger]
 route = "/sessions"
 [component.build]
-command = "spin py2wasm app -o app.wasm"
+command = "spin py2wasm app -o session.wasm"
