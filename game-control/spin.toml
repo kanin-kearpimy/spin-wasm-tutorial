@@ -1,0 +1,14 @@
+spin_manifest_version = "1"
+authors = ["kanin-kearpimy <kanin.kearpimy@gmail.com>"]
+description = "Controller for player to answer question"
+name = "game-control"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "game-control"
+source = "app.wasm"
+[component.trigger]
+route = "/control"
+[component.build]
+command = "spin py2wasm app -o app.wasm"
