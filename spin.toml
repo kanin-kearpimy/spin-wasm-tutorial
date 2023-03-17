@@ -14,7 +14,7 @@ route = "/sessions"
 
 [[component]]
 id = "game-score"
-source = "deployment/game-score.wasm"
+source = "deployment/score.wasm"
 environment = {REDIS_HOST = "redis://localhost:6379/"}
 [component.trigger]
 route = "/score"
