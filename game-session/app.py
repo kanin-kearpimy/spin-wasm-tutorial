@@ -9,30 +9,14 @@ sessions = ["number-1",
     "number-2",
     "number-3",
     "number-4",
-    # "plus",
-    # "minus",
-    # "multiply",
-    # "divide",
-    # "back",
-    # "space",
-    # "next"
     ]
 
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')
     queryParms = getQueryParams(request.uri)
-    totalSession = int(getKey(queryParms, 'totalSession') if hasKey(queryParms, 'totalSession') else 15)
-    session = generate_session(totalSession)
-    
-    session_id = str(uuid.uuid4())
-    sessionBody = json.dumps({
-        "session": session,
-        "score": 0
-    }).encode('utf-8')
-    
-    redis_set(redisHost, session_id, sessionBody)
-    
-    responseBody = json.dumps({"session": session, "session_id": session_id}).encode('utf-8')
+    # code here
+    # .....
+    # .....
     
     return Response(
                     status,

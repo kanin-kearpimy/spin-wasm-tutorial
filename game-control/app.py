@@ -7,20 +7,9 @@ headers = [("Content-Type", "application/json"), ("Access-Control-Allow-Origin",
 
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')
-    jsonObj = getJsonBody(request.body)
-    session_id = getKey(jsonObj, 'session_id')
-    answer = getKey(jsonObj, 'answer')
-    timeSlot = getKey(jsonObj, 'timeSlot')
-    session = redis_get(redisHost, session_id)
-    sessionJsonObj = json.loads(session)
-    if(checkAnswer(answer, timeSlot, getKey(sessionJsonObj, 'session'))): 
-        sessionJsonObj = json.dumps(increasePoint(sessionJsonObj)).encode('utf-8')
-        redis_set(redisHost, session_id, sessionJsonObj)
-    
-    return Response(200,
-                headers,
-                json.dumps({"message": "successful"}).encode('utf-8')
-            )
+    # code here
+    # .....
+    # .....
 
 
 def getJsonBody(body):

@@ -3,34 +3,15 @@ const session_label = {
     "number-2": 2,
     "number-3": 3,
     "number-4": 4,
-    "plus": '+',
-    "minus": '-',
-    "multiply": '*',
-    "divide": '/',
-    "back": '<-',
-    "space": 'space',
-    "next": 'next'
 }
 let session_id = ""
 let start = 30
 const startGame = async () => {
     let _constant_start = start
     try {
-        const { data } = await axios.get(
-            `http://127.0.0.1:3000/sessions?totalSession=${start}`
-            )
-        const { session } = data
-        session_id = data.session_id
-        const score = setInterval(startScoreBoard, 500)
-        const timer = setInterval(() => {
-            if(start < 0) {
-                clearInterval(score)
-                return clearInterval(timer)
-            }
-            displayInstruction(_constant_start - start, session)
-            setTimer(start)
-            start = start - 1
-        }, 1000)
+        // code here
+        // .....
+        // .....
         
     } catch (error) {
         alert('game error!!!')
@@ -38,9 +19,9 @@ const startGame = async () => {
 }
 
 const startScoreBoard = async () => {
-    const { data } = await axios.get(
-        `http://127.0.0.1:3000/score?session_id=${session_id}`
-    )
+    // Code here
+    // .....
+    // .....
     document.querySelector('#score').innerHTML = data.score
 }
 
@@ -53,14 +34,9 @@ const setTimer = (time) => {
 }
 
 const answer = async (event) => {
-    const label = event.id
-    const body = {
-        session_id,
-        answer: label,
-        timeSlot: start
-    } 
-    // should be post here!!!
-    await axios.post(`http://127.0.0.1:3000/control`, body, { headers: {"Content-Type": "text/plain"}})
+    // code here
+    // .....
+    // .....
 }
 
 startGame()
