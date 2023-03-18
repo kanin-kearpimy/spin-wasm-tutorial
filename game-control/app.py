@@ -7,6 +7,10 @@ headers = [("Content-Type", "application/json"), ("Access-Control-Allow-Origin",
 
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')
+    # 1) read session_id, answer, timeSlot from request (body)
+    # 2) check correct answer in redis database.
+    # 3) if yes; score + 1
+    # 4) if no; do nothing.
     # code here
     # .....
     # .....

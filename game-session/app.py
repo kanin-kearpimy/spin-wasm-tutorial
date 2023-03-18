@@ -14,6 +14,10 @@ sessions = ["number-1",
 def handle_request(request):
     redisHost = environ.get('REDIS_HOST')
     queryParms = getQueryParams(request.uri)
+    # 1) get totalSession from request (query string)
+    # 2) generate game session with random sequence of number (1-4)
+    # 3) save game session to redis database.
+    # 4) return session.
     # code here
     # .....
     # .....

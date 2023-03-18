@@ -6,6 +6,11 @@ const decoder = new TextDecoder()
 export const handleRequest: HandleRequest = async function(request: HttpRequest): Promise<HttpResponse> {
   let querys = getQueryParams(request.uri)
   const redis_host: string = process.env.REDIS_HOST as string
+
+  // 1) get session id from request (query string)
+  // 2) fetch score in redis database.
+  // 3) return score corresponding to session ID
+  // 3.5) if no session ID, return 'No Session ID.
   // code here.
   // .....
   // .....
