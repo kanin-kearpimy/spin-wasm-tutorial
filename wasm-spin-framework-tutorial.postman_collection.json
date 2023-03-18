@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "de2a98f9-3f27-4ce3-ac9e-c4df7e9796fa",
+		"name": "wasm-spin-framework-tutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24690373"
+	},
+	"item": [
+		{
+			"name": "Session (start game)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER_URL}}/sessions?totalSession=40",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "totalSession",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Score",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER_URL}}/score?session_id=3e6c784f-a3e6-45ef-89c6-3b75ae890a9e",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"score"
+					],
+					"query": [
+						{
+							"key": "session_id",
+							"value": "3e6c784f-a3e6-45ef-89c6-3b75ae890a9e"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Control (player numpad)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\": \"3e6c784f-a3e6-45ef-89c6-3b75ae890a9e\",\n    \"answer\": \"number-4\",\n    \"timeSlot\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER_URL}}/control",
+					"host": [
+						"{{SERVER_URL}}"
+					],
+					"path": [
+						"control"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
