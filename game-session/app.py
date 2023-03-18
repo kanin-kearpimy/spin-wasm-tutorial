@@ -51,6 +51,8 @@ def getQueryParams(uri):
             dictionary[key] = value
         return dictionary
 
-    keyValueObject = list(map(map_key_value, uri.split('?')[1].split('&')))
+    if(len(uri.split('?')) > 1):
+        keyValueObject = list(map(map_key_value, uri.split('?')[1].split('&')))
+        return convert_json(keyValueObject)
     
-    return convert_json(keyValueObject)
+    return {}
